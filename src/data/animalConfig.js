@@ -73,6 +73,22 @@ export const animalConfig = {
         '/images/duck2.jpg',
         '/images/duck3.jpg'
       ]
-    }
+    },
+    joakim: {
+        label: '🦖 Joakim',
+        facts: [
+          'Joakim is a mythical creature of immense coding power.',
+          'He once fixed a bug before it even existed.',
+          'Joakim doesn’t write code – he whispers it into existence.',
+          'He debugs JavaScript with his bare hands.',
+          'His favorite snack is... CSS variables.'
+        ],
+        images: [
+          '/images/joakim1.jpg',
+          '/images/joakim2.jpg',
+          '/images/joakim3.jpg'
+        ]
+      }
+      
   };
   

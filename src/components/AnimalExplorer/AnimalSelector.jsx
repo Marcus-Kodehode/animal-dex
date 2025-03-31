@@ -21,6 +21,7 @@ function AnimalSelector({ selectedAnimal, onChange, onSubmit }) {
         <option value="fox">🦊 Fox</option>
         <option value="panda">🐼 Panda</option>
         <option value="duck">🦆 Duck</option>     {/* Nytt alternativ lagt til */}
+        <option value="joakim">🦖 Joakim</option>
       </select>
 
       {/* Knapp for å vise fakta/bilde – deaktivert hvis intet dyr er valgt */}

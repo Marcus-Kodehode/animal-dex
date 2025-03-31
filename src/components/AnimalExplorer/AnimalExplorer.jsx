@@ -4,13 +4,14 @@ import styles from './AnimalExplorer.module.css'; // Importerer styling for komp
 
 // Liste over tilgjengelige dyr som brukeren kan velge
 const animals = [
-  { value: '', label: '-- Choose --' },       // Standard tomt valg
-  { value: 'cat', label: '🐱 Cat' },
-  { value: 'dog', label: '🐶 Dog' },
-  { value: 'fox', label: '🦊 Fox' },
-  { value: 'panda', label: '🐼 Panda' },
-  { value: 'duck', label: '🦆 Duck' }
-];
+    { value: '', label: '-- Choose --' },       // Standard tomt valg
+    { value: 'cat', label: '🐱 Cat' },
+    { value: 'dog', label: '🐶 Dog' },
+    { value: 'fox', label: '🦊 Fox' },
+    { value: 'panda', label: '🐼 Panda' },
+    { value: 'duck', label: '🦆 Duck' },
+    { value: 'joakim', label: '🐨 Joakim' }    // Joakim lagt til
+  ];
 
 function AnimalExplorer() {
   const [selectedAnimal, setSelectedAnimal] = useState(''); // Holder på hvilket dyr brukeren har valgt
