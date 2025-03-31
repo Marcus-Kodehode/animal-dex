@@ -31,6 +31,10 @@ Animal-dex ble utviklet som en React-oppgave med fokus på API-bruk og hooks, me
 
 ---
 
+📜 Lisens
+Dette prosjektet er fritt å bruke, modifisere og bygge videre på – til læring eller lek. Bruk det gjerne i undervisning, portefølje eller videre prosjekter.
+Bare ikke si at du laget det selv – det er dårlig karma 😄
+
 ## ✍️ Laget av Marcus @ Kodehode
 
 **Frontend-nerd med lidenskap for design, data og detaljer.**
