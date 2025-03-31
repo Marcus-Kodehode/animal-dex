@@ -1,0 +1,82 @@
+/* Container for hele CookieClicker-komponenten */
+.container {
+  background: white; /* Bakgrunnsfarge for kortet */
+  border-radius: 16px; /* Runde hjørner */
+  padding: 2rem; /* Innvendig marg */
+  text-align: center; /* Sentrert tekst */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Lett skygge for dybde */
+  margin: 2rem auto; /* Ytre marg: 2rem på topp og bunn, sentrert horisontalt */
+  max-width: 500px; /* Maksimal bredde på kortet */
+}
+
+/* Tittelstil for overskriften */
+.title {
+  font-size: 1.8rem; /* Størrelse på tittelen */
+  font-weight: bold; /* Fet skrift */
+  color: #9b59b6; /* Lilla farge */
+  margin-bottom: 0.5rem; /* Litt margin under tittelen */
+}
+
+/* Beskrivelses-stil for den korte teksten under tittelen */
+.description {
+  font-size: 1rem; /* Standard tekststørrelse */
+  color: #333; /* Mørk grå farge for lesbarhet */
+  margin-bottom: 1.5rem; /* Avstand under beskrivelsen */
+}
+
+/* Stil for boksen som viser poengsummen */
+.scoreBox {
+  font-size: 1.2rem; /* Litt større tekst for poeng */
+  font-weight: bold; /* Fet skrift for poeng */
+  margin-bottom: 1.2rem; /* Avstand under poengboksen */
+}
+
+/* Stil for selve poengsummen */
+.score {
+  color: orange; /* Farge på poengsummen */
+}
+
+/* Stil for cookie-bildet som fungerer som knapp */
+.cookieImage {
+  width: 120px; /* Bredde på bildet */
+  height: auto; /* Beholder bildeproporsjonene */
+  cursor: pointer; /* Endrer muspekeren ved hover for å indikere klikkbarhet */
+  transition: transform 0.2s ease; /* Jevn overgang for transformasjon ved hover */
+}
+
+/* Hover-effekt for cookie-bildet: skal skaleres opp litt */
+.cookieImage:hover {
+  transform: scale(1.1); /* Øker størrelsen med 10% ved hover */
+}
+
+/* Container for emoji-burst-effekten (konfetti med dyre-emojier) */
+.burstContainer {
+  position: fixed; /* Fiksert posisjon slik at den dekker hele skjermen */
+  left: 0; /* Starter helt til venstre */
+  top: 0; /* Starter helt øverst */
+  width: 100%; /* Dekker hele bredden på skjermen */
+  height: 100%; /* Dekker hele høyden på skjermen */
+  pointer-events: none; /* Hindrer interaksjon med elementene (klikk går gjennom) */
+  overflow: hidden; /* Skjuler overflødige elementer utenfor containeren */
+  z-index: 1000; /* Sørger for at den ligger øverst */
+}
+
+/* Stil for individuelle emoji-elementer i burst-effekten */
+.emoji {
+  position: absolute; /* Absolutt posisjon for å kunne plassere dem fritt */
+  font-size: 2rem; /* Størrelse på emojiene */
+  animation: fly-up 1.2s ease-out forwards; /* Animasjon for å fly opp og forsvinne */
+  top: 60%; /* Starter 60% fra toppen av skjermen */
+}
+
+/* Definisjon av animasjonen "fly-up" for emoji-burst */
+@keyframes fly-up {
+  0% {
+    transform: translateY(0) scale(1); /* Starter uten transformasjon */
+    opacity: 1; /* Full synlighet ved start */
+  }
+  100% {
+    transform: translateY(-200px) scale(1.5); /* Flytter opp 200px og øker i størrelse */
+    opacity: 0; /* Fader ut til usynlig */
+  }
+}

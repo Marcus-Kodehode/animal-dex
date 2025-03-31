@@ -1,0 +1,16 @@
+/* 📦 Wrapper rundt hele selector-komponenten (label, select, knapp) */
+.selector {
+    display: flex;              /* Bruker flexbox for å stable elementene */
+    flex-direction: column;     /* Elementene vises vertikalt (oppå hverandre) */
+    gap: 0.5rem;                /* Avstand mellom select og knapp */
+    max-width: 300px;           /* Begrenser bredden på selve boksen */
+    margin-top: 1rem;           /* Litt luft over komponenten */
+  }
+  
+  /* ✏️ Felles stil for select (dropdown) og knapp */
+  select,
+  button {
+    padding: 0.5rem;            /* Innvendig luft rundt tekst i elementene */
+    border-radius: 5px;         /* Runde hjørner for myk stil */
+  }
+  

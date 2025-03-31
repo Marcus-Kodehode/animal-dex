@@ -1,0 +1,116 @@
+/* Ytre container for AnimalExplorer (kort med skygge og avrundede kanter) */
+.wrapper {
+    background: white;                    /* Hvit bakgrunn */
+    padding: 2rem 3rem;                   /* Padding: 2rem vertikalt, 3rem horisontalt */
+    border-radius: 16px;                  /* Runde hjørner */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* Middels skygge under kortet */
+    text-align: center;                  /* Sentrerer tekst */
+    max-width: 500px;                    /* Maks bredde på kortet */
+    margin: 4rem auto;                   /* Sentrerer kortet på siden + topp/bunn-margin */
+  }
+  
+  
+/* Stil for <h1> - brukes hovedsakelig for fallback-tittel (ikke brukt aktivt i dette prosjektet) */
+h1 {
+    font-size: 2rem;                      /* Stor tittel */
+    margin-bottom: 0.5rem;               /* Litt avstand under */
+    display: flex;                       /* Flex for emoji/logo */
+    justify-content: center;            /* Sentrerer horisontalt */
+    align-items: center;                /* Sentrerer vertikalt */
+    gap: 0.5rem;                         /* Avstand mellom elementene */
+  }
+  
+  /* Stil for <p> – beskrivelser eller hjelpetekst */
+  p {
+    font-size: 1.1rem;                   /* Standard tekststørrelse */
+    margin-bottom: 2rem;                /* God avstand under teksten */
+    color: var(--text-color);           /* Henter farge fra global CSS-variabel */
+  }
+  
+  /* Stil for <label> – tekst over dropdown */
+  label {
+    font-weight: 600;                   /* Halvfet */
+    font-size: 1rem;
+    display: block;                     /* Block for å stå over select */
+    margin-bottom: 0.5rem;
+    text-align: left;                  /* Justert mot venstre */
+  }
+  
+  /* Stil for <select> – dropdown-menyen */
+  select {
+    padding: 0.5rem 1rem;               /* Innvendig marg */
+    font-size: 1rem;
+    border-radius: 8px;                 /* Runde kanter */
+    border: 1px solid #ccc;            /* Lys grå ramme */
+    margin-bottom: 1rem;
+    width: 100%;                        /* Tar hele bredden av kortet */
+  }
+  
+  
+/* Wrapper for flere kontrollknapper (hvis du bruker flere actions under dropdown) */
+.controls {
+    display: flex;
+    flex-direction: column;             /* Stablet vertikalt */
+    gap: 1rem;                          /* Avstand mellom elementene */
+    margin-top: 1.5rem;                 /* Avstand over */
+  }
+  
+
+/* Tittel/logo-stil – bruker gradient og bounce for pote-ikoner */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.6rem;                  /* Stor font for logo */
+    font-family: 'Fredoka', sans-serif;/* Lekent fontvalg */
+    font-weight: 800;                   /* Ekstra fet */
+    letter-spacing: 1px;                /* Litt luft mellom bokstaver */
+    gap: 0.5rem;                        /* Mellomrom mellom tekst og emojier */
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1); /* Lett skygge for dybde */
+  }
+  
+  /* Gradient-effekt på selve “Animal-dex”-teksten */
+  .logoText {
+    background: linear-gradient(90deg, #ff9a9e, #fad0c4, #a18cd1); /* Flerfarget pastell-gradient */
+    -webkit-background-clip: text;  /* Klipper gradienten til teksten */
+    -webkit-text-fill-color: transparent; /* Fjerner utfylling så gradienten synes */
+    animation: gradientShift 5s ease-in-out infinite; /* Flytende animasjon */
+  }
+  
+/* Stil for emoji-ikonene som er "poter" */
+.pawLeft,
+.pawRight {
+  font-size: 1.8rem;                   /* Litt mindre enn logo-tekst */
+  animation: bouncePaw 2.5s infinite ease-in-out; /* Loopende bounce-animasjon */
+  display: inline-block;
+}
+
+/* Forsinkelse på høyre pote så de ikke hopper likt */
+.pawRight {
+  animation-delay: 1s;
+}
+
+  
+/* Enkel “bounce” som løfter og vipper ikonene litt */
+@keyframes bouncePaw {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg); /* Start og slutt: normal posisjon */
+    }
+    50% {
+      transform: translateY(-6px) rotate(-10deg); /* Midt i animasjonen: litt opp og vipp */
+    }
+  }
+  
+  /* Gradient-animasjon: flytter gradienten horisontalt */
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  

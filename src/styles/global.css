@@ -1,0 +1,75 @@
+/* src/styles/global.css */
+
+/* 🎯 Nullstil og standardiser layout på tvers av nettlesere */
+* {
+    box-sizing: border-box; /* Inkluder padding og border i elementets totale bredde/høyde */
+    margin: 0;              /* Fjern standard margin */
+    padding: 0;             /* Fjern standard padding */
+  }
+  
+  /* 🎨 Globale variabler – farger, font, radius osv */
+  :root {
+    --font-family: 'Fredoka', sans-serif;        /* Hovedfont for hele appen */
+  
+    --bg-color: #fdf6f9;                         /* Bakgrunnsfarge fallback */
+    --text-color: #1e1e1e;                       /* Mørk tekstfarge */
+  
+    --primary: #a66dd4;                          /* Primærfarge – lilla */
+    --accent: #fbbc04;                           /* Aksentfarge – gul/oransje */
+    --danger: #f25f5c;                           /* Feilfarge – rødlig */
+  
+    --modal-bg: #ffffff;                         /* Modal bakgrunnsfarge */
+    --border-radius: 12px;                       /* Standard avrunding */
+  
+    --gradient-start: #fbeeff;                   /* Startfarge for bakgrunnsgradient */
+    --gradient-end: #ffe3e3;                     /* Sluttfarge for bakgrunnsgradient */
+  }
+  
+  /* 🌐 Stil for hele nettsiden */
+  body {
+    font-family: var(--font-family);            /* Bruk font fra variabel */
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)); /* Lys og leken gradientbakgrunn */
+    color: var(--text-color);                   /* Tekstfarge */
+    min-height: 100vh;                          /* Sørger for at body dekker hele høyden */
+    transition: background 0.5s ease;           /* Jevn overgang for evt. temabytting */
+  }
+  
+  /* 🧾 Kortstil som brukes på hovedinnhold (f.eks. modal, selector, explorer) */
+  .card {
+    background: white;                          /* Hvit bakgrunn på kortet */
+    padding: 2rem;                              /* Innvendig marg */
+    border-radius: var(--border-radius);        /* Runde hjørner */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);/* Myk skygge under kortet */
+    max-width: 600px;                           /* Maksimal bredde */
+    margin: 3rem auto;                          /* Sentral plassering på siden */
+    text-align: center;                         /* Midtstill innhold */
+  }
+  
+  /* 🔘 Globale knapper */
+  button {
+    font-family: inherit;                       /* Arver font fra body */
+    background-color: var(--primary);           /* Bruker primærfargen */
+    color: white;                               /* Hvit tekst */
+    border: none;                               /* Ingen kantlinje */
+    padding: 0.7rem 1.3rem;                      /* Innvendig padding */
+    border-radius: 8px;                         /* Runde hjørner */
+    cursor: pointer;                            /* Muspekeren blir til hånd */
+    font-weight: 600;                           /* Halvfet skrift */
+    transition: background 0.2s ease;           /* Jevn overgang på hover */
+  }
+  
+  /* 🖱️ Hover-effekt for knapper */
+  button:hover {
+    background-color: #5744c2;                  /* Mørkere versjon av primærfargen */
+  }
+  
+  /* ⬇️ Stil for dropdown-meny (select) */
+  select {
+    font-family: inherit;                       /* Arver fonten */
+    font-size: 1rem;                            /* Standard størrelse */
+    padding: 0.5rem;                            /* Innvendig marg */
+    border-radius: 8px;                         /* Runde hjørner */
+    border: 1px solid #ddd;                     /* Lys grå kantlinje */
+    margin-left: 0.5rem;                        /* Litt avstand fra label */
+  }
+  

@@ -1,0 +1,124 @@
+/* 🔲 Fullscreen mørk bakgrunn som legger seg bak modalen */
+.overlay {
+    position: fixed;                      /* Fiksert – dekker hele skjermen */
+    inset: 0;                             /* Topp, bunn, venstre, høyre = 0 */
+    background: rgba(0, 0, 0, 0.6);       /* Gjennomsiktig mørk bakgrunn */
+    display: flex;                        /* Bruker flex for sentrering */
+    justify-content: center;             /* Sentrer horisontalt */
+    align-items: center;                 /* Sentrer vertikalt */
+    z-index: 1000;                        /* Sørger for at den ligger over alt annet */
+  }
+  
+  /* 🧾 Selve modalboksen med skygge og padding */
+  .modal {
+    background: var(--modal-bg);         /* Hvit eller lys bakgrunn fra globalt tema */
+    padding: 2rem 2.5rem;                /* Luft rundt innholdet */
+    border-radius: var(--border-radius); /* Myke hjørner */
+    max-width: 520px;                    /* Maks bredde på modal */
+    width: 90%;                          /* Responsiv – opptil 90% av vindu */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Litt skygge rundt for dybde */
+    text-align: center;                  /* Midtstill alt tekstinnhold */
+    animation: fadeIn 0.3s ease-in-out;  /* Bruker fadeIn-animasjon ved åpning */
+  }
+  
+  /* 🗂 Tabs for å bytte mellom fakta og bilde */
+  .tabs {
+    display: flex;                       /* Radvis plassering */
+    justify-content: center;            /* Midtstilt */
+    gap: 1.2rem;                         /* Avstand mellom knappene */
+    margin-bottom: 1.5rem;              /* Avstand under tabs */
+  }
+  
+  /* 🧷 Knapper i tabs (Fakta / Bilde) */
+  .tabs button {
+    background: var(--accent);          /* Farge hentet fra global aksent */
+    color: var(--text-color);           /* Tekstfarge (som regel mørk) */
+    padding: 0.6rem 1.2rem;             /* Innvendig luft */
+    font-weight: 600;                   /* Halvfet for bedre synlighet */
+    font-size: 1rem;                    /* Standard størrelse */
+    border-radius: 10px;                /* Runde hjørner */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Litt dybde med skygge */
+    transition: transform 0.15s ease;   /* Jevn overgang ved hover */
+  }
+  
+  /* ✋ Hover-effekt for tabs-knapper */
+  .tabs button:hover {
+    transform: scale(1.05);             /* Zoom inn litt når mus peker */
+  }
+  
+  /* 📦 Innholdseksjon for tekst og bilde */
+  .content {
+    margin-bottom: 1.5rem;              /* Avstand ned mot lukkeknapp */
+    font-size: 1.1rem;                  /* Litt større skrift */
+  }
+  
+  /* 🖼️ Bildestil for dyrebilde */
+  .animalImage {
+    max-width: 100%;                    /* Responsiv bredde */
+    max-height: 300px;                  /* Ikke høyere enn 300px */
+    object-fit: contain;                /* Beholder proporsjoner, ingen cropping */
+    border-radius: 10px;                /* Runde hjørner */
+    display: block;                     /* Blokk for å kunne bruke margin auto */
+    margin: 1rem auto;                  /* Sentrer bilde vertikalt */
+  }
+  
+  /* 🔘 Grunnstil for alle knapper i modal (arver også til refresh/lukk) */
+  button {
+    font-family: var(--font-family);   /* Bruker hovedfont fra global stil */
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    padding: 0.7rem 1.4rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  
+  /* 🖱️ Hover-effekt for alle knapper */
+  button:hover {
+    transform: translateY(-1px);        /* Flytt knappen litt opp når man hover */
+  }
+  
+  /* ❌ Lukkeknapp (rød) nederst i modal */
+  .closeButton {
+    background-color: var(--danger);    /* Rød farge fra tema */
+    color: #fff;                         /* Hvit tekst */
+    margin-top: 1.2rem;                  /* Litt luft over knappen */
+  }
+  
+  /* 🔴 Hover-effekt for lukkeknapp */
+  .closeButton:hover {
+    background-color: #d84339;          /* Litt mørkere rød ved hover */
+  }
+  
+  /* 🔁 Knapp for å hente nytt bilde eller fakta */
+  .refreshButton {
+    background-color: var(--primary);   /* Primærfarge fra tema */
+    color: #fff;
+    margin-top: 1rem;
+  }
+  
+  /* 🔁 Hover-effekt for refresh-knapp */
+  .refreshButton:hover {
+    background-color: #8b57c7;          /* Mørkere variant av primærfargen */
+  }
+  
+  /* ℹ️ Brukes når det ikke er innhold (feil, loading etc.) */
+  .noContent {
+    color: #666;                         /* Grå farge */
+    font-style: italic;                 /* Kursiv for "hjelpetekst"-følelse */
+    margin-top: 1rem;
+  }
+  
+  /* ✨ Fade-in-animasjon for modal ved visning */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;                        /* Start usynlig */
+      transform: translateY(15px);       /* Litt lenger ned */
+    }
+    to {
+      opacity: 1;                        /* Fullt synlig */
+      transform: translateY(0);          /* Kommer på plass */
+    }
+  }
+  
