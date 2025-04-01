@@ -73,45 +73,68 @@ select {
   margin-left: 0.5rem;                        /* Litt luft til venstre */
 }
 
-/* 🎯 Plassering og stil for "floating" knapper (Leaderboard & Forbidden) */
+/* 🎯 Flytende knappecontainer – fester knappene øverst til høyre */
 .floatingButtons {
-  position: fixed;                            /* Fiksert til skjermen, uavhengig av scroll */
-  top: 1rem;                                  /* Avstand fra toppen */
-  right: 1rem;                                /* Avstand fra høyre */
-  display: flex;                              /* Stable knappene vertikalt */
+  position: fixed;              /* Lås posisjon til viewport */
+  top: 1rem;                    /* Avstand fra toppen */
+  right: 1rem;                  /* Avstand fra høyre */
+  display: flex;                /* Stable knappene vertikalt */
   flex-direction: column;
-  gap: 1rem;                                  /* Luft mellom knappene */
-  z-index: 1000;                              /* Sørger for at knappene er synlige over alt annet */
+  gap: 1rem;                    /* Luft mellom leaderboard og forbidden-knapp */
+  z-index: 1000;                /* Sørger for at knappene ligger over alt annet */
 }
 
-/* 🏆 Leaderboard og ⛔ Forbidden – delt base-stil */
+/* 🏆 Leaderboard-knapp + ⛔️ Forbidden-knapp – felles stil */
 .leaderboard-button,
 .forbidden-button {
-  font-size: 1.8rem;                          /* Stor emoji-knapp */
-  border: none;                               /* Ingen kant */
-  padding: 0.6rem 1rem;                        /* Behagelig størrelse */
-  border-radius: 50%;                         /* Sirkel-form */
-  cursor: pointer;                            /* Hånd ved hover */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Liten skygge for dybde */
-  transition: transform 0.2s ease;            /* Myk animasjon ved hover */
-  color: white;                               /* Hvit emoji-tekst */
+  width: 56px;                  /* Fast bredde */
+  height: 56px;                 /* Fast høyde */
+  font-size: 1.5rem;            /* Justert for sentrert emoji */
+  border: none;
+  border-radius: 50%;           /* Sirkelformet */
+  cursor: pointer;
+  font-weight: normal;
+  line-height: 1;               /* Unngå vertikal emoji-dytt */
+  display: flex;                /* Sentraliser emoji */
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* Subtil skygge */
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  background-size: 200% 200%;                /* For eventuell gradient-animasjon */
+  animation: pulseGlow 3s ease-in-out infinite; /* Glødende animasjon */
 }
 
-/* 🏆 Leaderboard-knappen bruker aksentfarge (gul) */
+/* 🏆 Leaderboard-knappen – glamor gradient */
 .leaderboard-button {
-  background: var(--accent);
+  background: linear-gradient(135deg, #fbbc04, #f06292); /* Oransje → rosa */
+  color: white;
 }
 
-/* ⛔ Forbidden-knappen bruker varselsfarge (rød) */
+/* ⛔️ Forbidden-knappen – dramatisk rødt */
 .forbidden-button {
-  background: var(--danger);
+  background: linear-gradient(135deg, #f25f5c, #c0392b); /* Lys → mørk rød */
+  color: white;
+  transform: translateY(1px); /* Finjustering for emoji sentrering */
 }
 
-/* 🔁 Hover-effekter – animasjon for responsivitet */
-.leaderboard-button:hover {
-  transform: scale(1.1);                      /* Vokser litt ved hover */
-}
-
+/* ✨ Hover-effekt med zoom */
+.leaderboard-button:hover,
 .forbidden-button:hover {
-  transform: rotate(10deg) scale(1.05);       /* Roterer og vokser litt – rampete effekt */
+  transform: scale(1.08); /* Litt sprett ved hover */
+}
+
+/* 💫 Glødende animasjon inspirert av Animista */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 12px rgba(255, 255, 255, 0.3),
+      0 0 25px rgba(255, 215, 0, 0.25);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.15);
+  }
 }
