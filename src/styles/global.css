@@ -2,74 +2,116 @@
 
 /* 🎯 Nullstil og standardiser layout på tvers av nettlesere */
 * {
-    box-sizing: border-box; /* Inkluder padding og border i elementets totale bredde/høyde */
-    margin: 0;              /* Fjern standard margin */
-    padding: 0;             /* Fjern standard padding */
-  }
-  
-  /* 🎨 Globale variabler – farger, font, radius osv */
-  :root {
-    --font-family: 'Fredoka', sans-serif;        /* Hovedfont for hele appen */
-  
-    --bg-color: #fdf6f9;                         /* Bakgrunnsfarge fallback */
-    --text-color: #1e1e1e;                       /* Mørk tekstfarge */
-  
-    --primary: #a66dd4;                          /* Primærfarge – lilla */
-    --accent: #fbbc04;                           /* Aksentfarge – gul/oransje */
-    --danger: #f25f5c;                           /* Feilfarge – rødlig */
-  
-    --modal-bg: #ffffff;                         /* Modal bakgrunnsfarge */
-    --border-radius: 12px;                       /* Standard avrunding */
-  
-    --gradient-start: #fbeeff;                   /* Startfarge for bakgrunnsgradient */
-    --gradient-end: #ffe3e3;                     /* Sluttfarge for bakgrunnsgradient */
-  }
-  
-  /* 🌐 Stil for hele nettsiden */
-  body {
-    font-family: var(--font-family);            /* Bruk font fra variabel */
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)); /* Lys og leken gradientbakgrunn */
-    color: var(--text-color);                   /* Tekstfarge */
-    min-height: 100vh;                          /* Sørger for at body dekker hele høyden */
-    transition: background 0.5s ease;           /* Jevn overgang for evt. temabytting */
-  }
-  
-  /* 🧾 Kortstil som brukes på hovedinnhold (f.eks. modal, selector, explorer) */
-  .card {
-    background: white;                          /* Hvit bakgrunn på kortet */
-    padding: 2rem;                              /* Innvendig marg */
-    border-radius: var(--border-radius);        /* Runde hjørner */
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);/* Myk skygge under kortet */
-    max-width: 600px;                           /* Maksimal bredde */
-    margin: 3rem auto;                          /* Sentral plassering på siden */
-    text-align: center;                         /* Midtstill innhold */
-  }
-  
-  /* 🔘 Globale knapper */
-  button {
-    font-family: inherit;                       /* Arver font fra body */
-    background-color: var(--primary);           /* Bruker primærfargen */
-    color: white;                               /* Hvit tekst */
-    border: none;                               /* Ingen kantlinje */
-    padding: 0.7rem 1.3rem;                      /* Innvendig padding */
-    border-radius: 8px;                         /* Runde hjørner */
-    cursor: pointer;                            /* Muspekeren blir til hånd */
-    font-weight: 600;                           /* Halvfet skrift */
-    transition: background 0.2s ease;           /* Jevn overgang på hover */
-  }
-  
-  /* 🖱️ Hover-effekt for knapper */
-  button:hover {
-    background-color: #5744c2;                  /* Mørkere versjon av primærfargen */
-  }
-  
-  /* ⬇️ Stil for dropdown-meny (select) */
-  select {
-    font-family: inherit;                       /* Arver fonten */
-    font-size: 1rem;                            /* Standard størrelse */
-    padding: 0.5rem;                            /* Innvendig marg */
-    border-radius: 8px;                         /* Runde hjørner */
-    border: 1px solid #ddd;                     /* Lys grå kantlinje */
-    margin-left: 0.5rem;                        /* Litt avstand fra label */
-  }
-  
+  box-sizing: border-box; /* Inkluder padding og border i elementets totale bredde/høyde */
+  margin: 0;              /* Fjern standard margin */
+  padding: 0;             /* Fjern standard padding */
+}
+
+/* 🎨 Globale variabler – definert under :root for enkel gjenbruk */
+:root {
+  --font-family: 'Fredoka', sans-serif;        /* Brukes i hele appen for konsekvent typografi */
+
+  --bg-color: #fdf6f9;                         /* Lyserosa bakgrunn (fallback, ikke brukt direkte) */
+  --text-color: #1e1e1e;                       /* Standard tekstfarge – mørk grå */
+
+  --primary: #a66dd4;                          /* Lilla – brukes på knapper og titler */
+  --accent: #fbbc04;                           /* Gul/oransje – aksentfarge, bl.a. leaderboard-knapp */
+  --danger: #f25f5c;                           /* Rødlig – brukes på forbidden-knappen */
+
+  --modal-bg: #ffffff;                         /* Hvit bakgrunn i modaler */
+  --border-radius: 12px;                       /* Generell avrunding brukt over hele siden */
+
+  --gradient-start: #fbeeff;                   /* Startfarge for bakgrunnsgradient */
+  --gradient-end: #ffe3e3;                     /* Sluttfarge for gradienten */
+}
+
+/* 🌐 Hele <body> – bakgrunn, font og farger */
+body {
+  font-family: var(--font-family);            /* Bruker valgt font */
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)); /* Pastellgradient bakgrunn */
+  color: var(--text-color);                   /* Standard tekstfarge */
+  min-height: 100vh;                          /* Fyller minst hele skjermen i høyde */
+  transition: background 0.5s ease;           /* Hvis vi skulle legge til tema senere */
+}
+
+/* 🧾 Kort-design brukt overalt (AnimalExplorer, modaler, osv.) */
+.card {
+  background: white;                          /* Ren bakgrunn */
+  padding: 2rem;                              /* Romslig innhold */
+  border-radius: var(--border-radius);        /* Runde hjørner */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);/* Subtil skygge som løfter kortet */
+  max-width: 600px;                           /* Breddebegrensning */
+  margin: 3rem auto;                          /* Midtstilles horisontalt */
+  text-align: center;                         /* Midtjustert innhold */
+}
+
+/* 🔘 Globale knapper – arver font og farge */
+button {
+  font-family: inherit;                       /* Bruk samme font som body */
+  background-color: var(--primary);           /* Standard lilla knappfarge */
+  color: white;                               /* Hvit tekst */
+  border: none;                               /* Fjern kantlinjer */
+  padding: 0.7rem 1.3rem;                      /* Luft i knappen */
+  border-radius: 8px;                         /* Runde kanter */
+  cursor: pointer;                            /* Hånd-symbol ved hover */
+  font-weight: 600;                           /* Litt kraftigere font */
+  transition: background 0.2s ease;           /* Jevn overgang ved hover */
+}
+
+/* 🖱️ Hover-effekt for vanlige knapper */
+button:hover {
+  background-color: #5744c2;                  /* Litt mørkere lilla */
+}
+
+/* ⬇️ Stil for dropdowns (f.eks. velg dyr) */
+select {
+  font-family: inherit;                       /* Matcher fontstil med resten */
+  font-size: 1rem;                            /* Lettlest størrelse */
+  padding: 0.5rem;                            /* Luft i feltet */
+  border-radius: 8px;                         /* Runde kanter */
+  border: 1px solid #ddd;                     /* Lys kantlinje */
+  margin-left: 0.5rem;                        /* Litt luft til venstre */
+}
+
+/* 🎯 Plassering og stil for "floating" knapper (Leaderboard & Forbidden) */
+.floatingButtons {
+  position: fixed;                            /* Fiksert til skjermen, uavhengig av scroll */
+  top: 1rem;                                  /* Avstand fra toppen */
+  right: 1rem;                                /* Avstand fra høyre */
+  display: flex;                              /* Stable knappene vertikalt */
+  flex-direction: column;
+  gap: 1rem;                                  /* Luft mellom knappene */
+  z-index: 1000;                              /* Sørger for at knappene er synlige over alt annet */
+}
+
+/* 🏆 Leaderboard og ⛔ Forbidden – delt base-stil */
+.leaderboard-button,
+.forbidden-button {
+  font-size: 1.8rem;                          /* Stor emoji-knapp */
+  border: none;                               /* Ingen kant */
+  padding: 0.6rem 1rem;                        /* Behagelig størrelse */
+  border-radius: 50%;                         /* Sirkel-form */
+  cursor: pointer;                            /* Hånd ved hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Liten skygge for dybde */
+  transition: transform 0.2s ease;            /* Myk animasjon ved hover */
+  color: white;                               /* Hvit emoji-tekst */
+}
+
+/* 🏆 Leaderboard-knappen bruker aksentfarge (gul) */
+.leaderboard-button {
+  background: var(--accent);
+}
+
+/* ⛔ Forbidden-knappen bruker varselsfarge (rød) */
+.forbidden-button {
+  background: var(--danger);
+}
+
+/* 🔁 Hover-effekter – animasjon for responsivitet */
+.leaderboard-button:hover {
+  transform: scale(1.1);                      /* Vokser litt ved hover */
+}
+
+.forbidden-button:hover {
+  transform: rotate(10deg) scale(1.05);       /* Roterer og vokser litt – rampete effekt */
+}

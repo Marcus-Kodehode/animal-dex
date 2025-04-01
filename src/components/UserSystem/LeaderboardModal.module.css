@@ -1,0 +1,107 @@
+/* 📦 Bakgrunn og sentrering for modalen */
+.overlay {
+    position: fixed;                    /* Legg modalen over alt */
+    inset: 0;                           /* Dekk hele skjermen */
+    background: rgba(0, 0, 0, 0.6);     /* Halvgjennomsiktig mørk bakgrunn */
+    display: flex;                     /* Bruk flexbox for plassering */
+    justify-content: center;          /* Sentrer horisontalt */
+    align-items: center;              /* Sentrer vertikalt */
+    z-index: 1000;                    /* Sørg for at den ligger over alt annet */
+  }
+  
+  /* 🧾 Selve modalboksen */
+  .modal {
+    background: white;                     /* Hvit bakgrunn */
+    padding: 2rem;                         /* Innvendig marg */
+    border-radius: 16px;                   /* Runde hjørner */
+    max-width: 400px;                      /* Maks bredde */
+    width: 90%;                            /* Fyll nesten hele bredden på mobil */
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2); /* Dyp skygge for "pop-out" effekt */
+    text-align: center;                    /* Midtstill tekst */
+  }
+  
+  /* 🏆 Tittel på leaderboard */
+  .title {
+    color: #9b59b6;                        /* Lilla for konsist tema */
+  }
+  
+  /* 📋 Uordna liste uten punkter */
+  .list {
+    list-style: none;                      /* Fjern prikker */
+    padding: 0;
+    margin: 2rem 0;                        /* Luft over og under listen */
+  }
+  
+  /* 👤 Enkeltbruker i listen */
+  .entry {
+    background-color: #f8ecff;             /* Lys lilla bakgrunn for kontrast */
+    margin: 0.5rem 0;                      /* Litt mellomrom mellom entries */
+    padding: 0.8rem 1rem;                  /* Innvendig marg */
+    border-radius: 12px;                   /* Runde kanter */
+    display: flex;                         /* Flex for å spre innholdet */
+    justify-content: space-between;       /* Avstand mellom rank, navn og poeng */
+    align-items: center;                  /* Vertikal justering */
+    font-weight: 500;                      /* Litt fetere skrift */
+  }
+  
+  /* 🥇 Rank nummerering eller emoji */
+  .rank {
+    font-size: 1.2rem;
+    width: 2rem;
+    text-align: left;                     /* Venstrejustert */
+  }
+  
+  /* 👤 Navn på brukeren */
+  .name {
+    flex: 1;                               /* Tar opp tilgjengelig plass */
+    text-align: left;                     /* Venstrejustert */
+    padding-left: 0.5rem;
+  }
+  
+  /* 🍪 Poengsum */
+  .score {
+    font-weight: bold;
+    color: orange;                        /* Samme farge som brukt i CookieClicker */
+  }
+  
+  /* 🔘 Knappe-rad nederst i modal */
+  .buttonRow {
+    display: flex;
+    justify-content: space-between;       /* Spre knappene */
+    gap: 1rem;                             /* Mellomrom mellom knappene */
+    margin-top: 1.5rem;
+  }
+  
+  /* ❌ Lukkeknapp */
+  .closeButton {
+    padding: 0.6rem 1.2rem;
+    background-color: #a66dd4;            /* Primærfarge */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  
+  /* 🗑️ Slett-knapp */
+  .clearButton {
+    padding: 0.6rem 1.2rem;
+    background-color: #f25f5c;            /* Samme rødfarge som forbidden button */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  
+  /* 🖱️ Hover-effekter for interaktivitet */
+  .clearButton:hover {
+    background-color: #e04845;            /* Mørkere rød ved hover */
+  }
+  
+  .closeButton:hover {
+    background-color: #7c47b1;            /* Mørkere lilla ved hover */
+  }
+  

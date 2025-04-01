@@ -1,0 +1,81 @@
+/* 🔒 Bakgrunn som dekker hele skjermen og viser modal i midten */
+.overlay {
+    position: fixed;             /* Låser posisjon til hele skjermen */
+    inset: 0;                    /* Topp, høyre, bunn, venstre = 0 */
+    background: rgba(0, 0, 0, 0.85); /* Mørkere bakgrunn enn vanlig modal */
+    display: flex;               /* Flexbox for senterplassering */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;               /* Over alt annet */
+  }
+  
+  /* 📦 Selve modalboksen */
+  .modal {
+    background: white;            /* Lys bakgrunn */
+    padding: 2rem;                /* Luft rundt innholdet */
+    border-radius: 14px;          /* Myke hjørner */
+    text-align: center;           /* Midtstilt innhold */
+    width: 90%;                   /* Mobilvennlig */
+    max-width: 460px;             /* Begrens bredde på store skjermer */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Skygge for dybde */
+  }
+  
+  /* 🎞️ Animerte GIF-bilder */
+  .gif {
+    max-width: 100%;              /* Bilde skal aldri overstige container */
+    max-height: 250px;            /* Begrens høyde så det ikke tar over modalen */
+    border-radius: 8px;           /* Myke hjørner */
+    margin: 1rem 0;               /* Luft over og under */
+  }
+  
+  /* 💬 Tekst i modalen */
+  .text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+  }
+  
+  /* 🔘 Rad for tilbake/neste-knapper */
+  .actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;                    /* Luft mellom knappene */
+  }
+  
+  /* 🧭 Knappestiler felles */
+  .backButton,
+  .nextButton {
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    border: none;
+  }
+  
+  /* 🔙 Tilbake-knapp */
+  .backButton {
+    background-color: #ccc; /* Grå */
+  }
+  
+  /* ⏭️ Neste-knapp */
+  .nextButton {
+    background-color: #f25f5c; /* Rød/alert */
+    color: white;
+  }
+  
+  /* ✨ Hover-effekt for begge */
+  .backButton:hover,
+  .nextButton:hover {
+    transform: scale(1.05); /* Litt større ved hover */
+  }
+  
+  /* ⚠️ Ekstra advarseltekst på siste modal */
+  .trapNote {
+    color: crimson;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+  }
+  

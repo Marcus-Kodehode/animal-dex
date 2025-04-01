@@ -1,0 +1,110 @@
+/* RegisterModal.module.css */
+
+/* 🔳 Mørk bakgrunn bak modalen – dekker hele skjermen */
+.overlay {
+    position: fixed;               /* Gjør at overflaten alltid dekker hele skjermen */
+    inset: 0;                      /* Tilsvarer top: 0; right: 0; bottom: 0; left: 0 */
+    background: rgba(0, 0, 0, 0.6);/* Gjennomsiktig svart bakgrunn for å fremheve modal */
+    display: flex;                 /* Bruker flexbox for sentrering */
+    justify-content: center;      /* Horisontal sentrering */
+    align-items: center;          /* Vertikal sentrering */
+    z-index: 1000;                /* Sørger for at modalen ligger over alt annet */
+  }
+  
+  /* 📦 Selve modalboksen */
+  .modal {
+    background-color: white;                      /* Hvit boks for tydelig kontrast */
+    border-radius: 16px;                          /* Runde hjørner for mykere uttrykk */
+    padding: 2rem 2.5rem;                         /* God plass inni modalen */
+    max-width: 420px;                             /* Begrenset bredde */
+    width: 100%;                                  /* Fyller all tilgjengelig bredde inntil max */
+    text-align: center;                           /* Sentraliserer tekst og innhold */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);   /* Myk skygge under modal for dybde */
+  }
+  
+  /* 🏷️ Overskriftstil */
+  h2 {
+    font-size: 1.6rem;        /* Litt større tekst */
+    margin-bottom: 0.5rem;    /* Litt luft under */
+  }
+  
+  /* 📝 Standard tekst i modal */
+  p {
+    margin-bottom: 1.5rem;    /* Luft mellom tekst og innhold */
+    color: var(--text-color); /* Standard mørk tekstfarge */
+  }
+  
+  /* 🧾 Skjema-stil – kolonneoppsett og luft */
+  .form {
+    display: flex;            /* Flexbox */
+    flex-direction: column;  /* Vertikal stabling av inputs og knapper */
+    gap: 1rem;               /* Luft mellom hvert element */
+    margin-top: 1rem;        /* Luft over skjemaet */
+  }
+  
+  /* 🔤 Input-felt (navn og e-post) */
+  .input {
+    padding: 0.75rem 1rem;                       /* Luft inni feltet */
+    border-radius: 10px;                         /* Runde kanter */
+    border: 1px solid #ccc;                      /* Lys grå kant */
+    font-size: 1rem;                             /* Komfortabel størrelse */
+    width: 100%;                                 /* Fyller containeren */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);    /* Subtil dybdeeffekt */
+    transition: border-color 0.2s;               /* Jevn overgang ved fokus */
+  }
+  
+  /* 🔍 Fokusstil for input – lilla kant */
+  .input:focus {
+    outline: none;                 /* Fjern standard blå kant */
+    border-color: var(--primary); /* Bruk lilla kant når aktiv */
+  }
+  
+  /* 🔘 Knapp-container for "Keep Clicking" */
+  .buttonRow {
+    margin-bottom: 1rem;           /* Litt luft under knappen */
+  }
+  
+  /* 🔙 "Keep Clicking"-knappen */
+  .cancelButton {
+    background-color: var(--primary);  /* Lilla bakgrunn */
+    color: white;                      /* Hvit tekst */
+    border: none;                      /* Fjern kantlinje */
+    border-radius: 10px;               /* Runde hjørner */
+    padding: 0.7rem 1.4rem;            /* Luft i knappen */
+    font-weight: 600;                  /* Halvfet skrift */
+    cursor: pointer;                  /* Hånd-peker */
+    font-size: 1rem;                  /* Standard tekststørrelse */
+    transition: background-color 0.2s ease; /* Myk overgang */
+  }
+  
+  /* 🎨 Hover-effekt for "Keep Clicking" */
+  .cancelButton:hover {
+    background-color: #8b57c7; /* Mørkere lilla på hover */
+  }
+  
+  /* ✅ "Register Score"-knappen */
+  .submitButton {
+    background-color: var(--accent);    /* Oransje bakgrunn */
+    color: white;                       /* Hvit tekst */
+    border: none;                       /* Ingen kantlinje */
+    padding: 0.7rem 1.4rem;             /* Komfortabel padding */
+    border-radius: 10px;                /* Runde hjørner */
+    font-weight: 600;                   /* Halvfet */
+    font-size: 1rem;                    /* Tekststørrelse */
+    cursor: pointer;                    /* Håndpeker */
+    transition: background-color 0.2s ease; /* Jevn overgang */
+  }
+  
+  /* 🌟 Hover-effekt for "Register Score" */
+  .submitButton:hover {
+    background-color: #e49f00; /* Litt mørkere oransje ved hover */
+  }
+  
+  /* ❗ Feilmelding ved manglende input */
+  .error {
+    color: var(--danger);     /* Rød farge for tydelighet */
+    margin-top: -0.5rem;      /* Løfter teksten litt opp */
+    margin-bottom: 0.5rem;    /* Luft under */
+    font-size: 0.9rem;        /* Litt mindre tekststørrelse */
+  }
+  

@@ -1,44 +1,44 @@
-import React, { useState } from 'react'; // Importerer React og useState hook
-import AnimalModal from './AnimalModal'; // Importerer modalen for visning av fakta og bilde
-import styles from './AnimalExplorer.module.css'; // Importerer styling for komponenten
+import React, { useState } from 'react'; // Importerer React og useState-hook
+import styles from './AnimalExplorer.module.css'; // Importerer modulbasert CSS for layout og design
 
-// Liste over tilgjengelige dyr som brukeren kan velge
+// 🐾 Liste over alle dyr som kan velges – vises i dropdown
 const animals = [
-    { value: '', label: '-- Choose --' },       // Standard tomt valg
-    { value: 'cat', label: '🐱 Cat' },
-    { value: 'dog', label: '🐶 Dog' },
-    { value: 'fox', label: '🦊 Fox' },
-    { value: 'panda', label: '🐼 Panda' },
-    { value: 'duck', label: '🦆 Duck' },
-    { value: 'joakim', label: '🐨 Joakim' }    // Joakim lagt til
-  ];
+  { value: '', label: '-- Choose --' },             // Standard tomvalg
+  { value: 'cat', label: '🐱 Cat' },                 // API-basert
+  { value: 'dog', label: '🐶 Dog' },                 // Manuell fakta + bilde via API
+  { value: 'fox', label: '🦊 Fox' },                 // Manuell data
+  { value: 'panda', label: '🐼 Panda' },             // Manuell data
+  { value: 'duck', label: '🦆 Duck' },               // Manuell data
+  { value: 'joakim', label: '🐨 Joakim' }            // 🎉 Spesial-karakter
+];
 
-function AnimalExplorer() {
-  const [selectedAnimal, setSelectedAnimal] = useState(''); // Holder på hvilket dyr brukeren har valgt
-  const [isModalOpen, setIsModalOpen] = useState(false);    // Styrer om modalvinduet vises eller ikke
+// 🌿 Komponent for dyrevelgeren. Tar imot onAnimalSelected som prop (fra App.jsx)
+function AnimalExplorer({ onAnimalSelected }) {
+  const [selectedAnimal, setSelectedAnimal] = useState(''); // Holder på valgt dyr
 
+  // 📌 Oppdaterer når brukeren velger fra dropdown
   const handleSelect = (e) => {
-    setSelectedAnimal(e.target.value); // Oppdaterer hvilket dyr som er valgt i dropdown
+    setSelectedAnimal(e.target.value);
   };
 
+  // 📤 Når knapp trykkes, send dyr tilbake til App via prop
   const handleOpenModal = () => {
     if (selectedAnimal) {
-      setIsModalOpen(true); // Åpner modal hvis et dyr er valgt
+      onAnimalSelected(selectedAnimal);
     }
   };
 
   return (
-    <div className={styles.wrapper}> {/* Wrapper rundt hele seksjonen */}
-      <div className={styles.card}> {/* Kort-design for tittel og valg */}
-
-        {/* Tittel/logo */}
+    <div className={styles.wrapper}>
+      <div className={styles.card}>
+        {/* 🔠 Logo med animert tekst og emoji-poter */}
         <h1 className={styles.logo}>
           <span className={styles.pawLeft}>🐾</span>
           <span className={styles.logoText}>Animal-dex</span>
           <span className={styles.pawRight}>🐾</span>
         </h1>
 
-        {/* Label og dropdown for dyrevalg */}
+        {/* 📑 Label + dropdown meny */}
         <label htmlFor="animal-select">Choose an animal:</label>
         <select
           id="animal-select"
@@ -48,28 +48,20 @@ function AnimalExplorer() {
         >
           {animals.map((animal) => (
             <option key={animal.value} value={animal.value}>
-              {animal.label} {/* Viser emojien + navnet på dyret */}
+              {animal.label}
             </option>
           ))}
         </select>
 
-        {/* Knapp som åpner modal, kun hvis et dyr er valgt */}
+        {/* ✅ Vis knapp når et dyr er valgt */}
         {selectedAnimal && (
           <button className={styles.openButton} onClick={handleOpenModal}>
             Show fact and image
           </button>
         )}
       </div>
-
-      {/* Modal vises hvis isModalOpen er true */}
-      {isModalOpen && (
-        <AnimalModal
-          animal={selectedAnimal}               // Sender valgt dyr til modal
-          onClose={() => setIsModalOpen(false)} // Lukkefunksjon for modal
-        />
-      )}
     </div>
   );
 }
 
-export default AnimalExplorer; // Eksporterer komponenten slik at den kan brukes i App.jsx
+export default AnimalExplorer; // 🔄 Gjør komponenten tilgjengelig for bruk i App.jsx
