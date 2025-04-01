@@ -9,7 +9,7 @@ Prosjektet ble utviklet som en del av en React-oppgave med fokus på `useState`,
 ## 🚀 Funksjonalitet
 
 ### 🧠 Dyrefakta + bilder
-- Velg mellom dyrene: **katt, hund, rev, panda, and og Joakim**.
+- Velg mellom dyrene: **katt, hund, rev, panda, and og en misforstått koala?**.
 - Fakta for katten hentes via API (`catfact.ninja`), resten er håndlaget.
 - Bildene vises sammen med fakta i en **modal**, og kan byttes manuelt.
 - All tekst er på engelsk og tilpasset internasjonal målgruppe.
@@ -24,12 +24,6 @@ Prosjektet ble utviklet som en del av en React-oppgave med fokus på `useState`,
   - 🥇🥈🥉 for de tre beste!
   - Mulighet for å **nullstille** leaderboardet med én knapp.
   - All data lagres i `localStorage`.
-
-### ⛔ Forbidden Zone (på egen risiko!)
-- En mystisk knapp øverst i høyre hjørne.
-- Starter en reise gjennom **4 advarende modaler**, med animerte `.gif`-er.
-- Den siste modalen spiller en **loopet lydfil** – og kan **ikke lukkes**.
-- Bare én utvei: **refresh siden** 😈
 
 ---
 
@@ -59,10 +53,6 @@ Stylingen kombinerer `global.css` for tema og variabler, med `module.css` for ko
 
 ### 📁 Struktur
 src/ └── components/ ├── AnimalExplorer/ ├── CookieClicker/ ├── UserSystem/ └── ForbiddenZone/ public/ └── images/ → .jpg/.gif └── sounds/ → .mp3
-
-yaml
-Kopier
-Rediger
 
 ---
 
