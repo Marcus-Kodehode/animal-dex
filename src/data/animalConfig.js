@@ -86,7 +86,15 @@ export const animalConfig = {
         images: [
           '/images/joakim1.jpg',
           '/images/joakim2.jpg',
-          '/images/joakim3.jpg'
+          '/images/joakim3.jpg',
+          '/images/joakim4.jpg',
+          '/images/joakim5.jpg',
+          '/images/joakim6.jpg',
+          '/images/joakim7.jpg',
+          '/images/joakim8.jpg',
+          '/images/joakim9.jpg',
+          '/images/joakim10.jpg',
+          '/images/joakim11.jpg'
         ]
       }
       
